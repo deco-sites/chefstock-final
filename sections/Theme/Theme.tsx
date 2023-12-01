@@ -23,7 +23,7 @@ export interface MainColors {
   /**
    * @format color
    * @title Scondary
-   * @default #8C3D3D
+   * @default #DE3154;
    */
   "secondary": string;
   /**

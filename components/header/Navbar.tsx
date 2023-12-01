@@ -16,7 +16,7 @@ import { navbarHeight } from "./constants.ts";
 
 function Navbar({ items, searchbar, logo }: {
   items: SiteNavigationElement[];
-  searchbar?: SearchbarProps;
+  searchbar: SearchbarProps;
   logo?: { src: string; alt: string };
 }) {
   const platform = usePlatform();
@@ -26,7 +26,7 @@ function Navbar({ items, searchbar, logo }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
+        class="bg-[#f53859] md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
         <MenuButton />
 
@@ -41,10 +41,11 @@ function Navbar({ items, searchbar, logo }: {
           </a>
         )}
 
-        <div class="flex gap-1">
+        <div class="flex gap-1 meu-svg">
           <SearchButton />
           {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
+          {platform === "nuvemshop" && <CartButtonNuvemshop />}
         </div>
       </div>
 
@@ -55,43 +56,38 @@ function Navbar({ items, searchbar, logo }: {
             <a
               href="/"
               aria-label="Store logo"
-              class="block px-4 py-3 w-[160px]"
+              class="block px-4 py-1 w-[200px]"
             >
-              <Image src={logo.src} alt={logo.alt} width={126} height={16} />
+              <Image src={logo.src} alt={logo.alt} width={170} height={36} />
             </a>
           )}
         </div>
         <div class="flex-auto flex justify-center">
-          {items.map((item) => <NavItem item={item} />)}
+          <div class="w-3/4 ...">
+            <Searchbar {...searchbar} />
+          </div>
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <SearchButton />
-          <Searchbar searchbar={searchbar} />
           <a
-            class="btn btn-circle btn-sm btn-ghost"
+            class="btn btn-circle btn-sm btn-ghost color-base-100"
             href="/login"
             aria-label="Log in"
           >
-            <Icon id="User" size={24} strokeWidth={0.4} />
+            <Icon id="User" size={24} strokeWidth={0.4} class="meu-svg" />
           </a>
-          <a
-            class="btn btn-circle btn-sm btn-ghost"
-            href="/wishlist"
-            aria-label="Wishlist"
-          >
-            <Icon
-              id="Heart"
-              size={24}
-              strokeWidth={2}
-              fill="none"
-            />
-          </a>
+
           {platform === "vtex" && <CartButtonVTEX />}
           {platform === "vnda" && <CartButtonVDNA />}
           {platform === "wake" && <CartButtonWake />}
           {platform === "linx" && <CartButtonLinx />}
           {platform === "shopify" && <CartButtonShopify />}
           {platform === "nuvemshop" && <CartButtonNuvemshop />}
+        </div>
+      </div>
+
+      <div class="bg-[#f53859] hidden md:flex flex-row justify-between items-center w-full pl-2 pr-6">
+        <div class="flex-auto flex justify-center">
+          {items.map((item) => <NavItem item={item} />)}
         </div>
       </div>
     </>

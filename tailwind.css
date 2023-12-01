@@ -41,3 +41,25 @@
     --dot-progress: 100%
   }
 }
+.meu-svg {
+  fill: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+.indicator {
+  color: #FFFFFF !important;
+}
+.desce-men {
+  margin-top: 158px !important;
+}
+.minhabarra {
+  height: 159px !important;
+}
+
+@media (max-width: 768px) {
+  .desce-men {
+    margin-top: 87px;
+  }
+  .minhabarra {
+    height: 87px !important;
+  }
+}

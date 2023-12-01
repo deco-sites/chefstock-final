@@ -11,8 +11,7 @@ export interface Props {
   alerts: string[];
 
   /** @title Search Bar */
-  searchbar?: Omit<SearchbarProps, "platform">;
-
+  searchbar: SearchbarProps;
   /**
    * @title Navigation items
    * @description Navigation items used both on mobile and desktop menus
@@ -25,26 +24,26 @@ export interface Props {
 
 function Header({
   alerts,
-  searchbar,
+  searchbar: _searchbar,
   navItems,
   logo,
 }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
-
+  const searchbar = {..._searchbar};
   return (
     <>
-      <header style={{ height: headerHeight }}>
+      <header class="minhabarra" style={{ height: headerHeight }}>
         <Drawers
           menu={{ items }}
           searchbar={searchbar}
           platform={platform}
         >
-          <div class="bg-base-100 fixed w-full z-50">
+          <div class="bg-[#f53859] fixed w-full z-50">
             <Alert alerts={alerts} />
             <Navbar
               items={items}
-              searchbar={searchbar && { ...searchbar, platform }}
+              searchbar={searchbar}
               logo={logo}
             />
           </div>

@@ -36,7 +36,7 @@ export interface Props {
     /** @default 2 */
     mobile?: 1 | 2;
     /** @default 4 */
-    desktop?: 1 | 2 | 4 | 6 | 8;
+    desktop?: 1 | 2 | 3 | 4 | 6 | 8;
   };
   /**
    * @description Item's border radius in px
@@ -58,6 +58,7 @@ const MOBILE_COLUMNS = {
 const DESKTOP_COLUMNS = {
   1: "sm:grid-cols-1",
   2: "sm:grid-cols-2",
+  3: "sm:grid-cols-3",
   4: "sm:grid-cols-4",
   6: "sm:grid-cols-6",
   8: "sm:grid-cols-8",
@@ -86,7 +87,7 @@ const RADIUS_DESKTOP = {
 };
 
 const DEFAULT_PROPS: Props = {
-  title: "Summer bags",
+  title: "",
   banners: [
     {
       alt: "a",
@@ -136,7 +137,7 @@ export default function BannnerGrid(props: Props) {
           </div>
         )}
       <div
-        class={`grid gap-4 md:gap-6 ${
+        class={`mt-6 grid gap-4 md:gap-6 ${
           MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
         } ${DESKTOP_COLUMNS[itemsPerLine?.desktop ?? 4]}`}
       >
