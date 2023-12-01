@@ -30,7 +30,7 @@ function Header({
 }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
-  const searchbar = {..._searchbar};
+  const searchbar = { ..._searchbar };
   return (
     <>
       <header class="minhabarra" style={{ height: headerHeight }}>
