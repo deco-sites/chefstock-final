@@ -39,7 +39,7 @@ export default function GallerySlider(props: Props) {
     <div id={id} class="grid grid-flow-row sm:grid-flow-col">
       {/* Image Slider */}
       <div class="relative order-1 sm:order-2">
-        <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
+        <Slider class="carousel carousel-center gap-6 w-screen sm:w-[34vw]">
           {images.map((img, index) => (
             <Slider.Item
               index={index}

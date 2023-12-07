@@ -119,7 +119,7 @@ function BannerItem(
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={desktop}
-          width={1440}
+          width={1920}
           height={600}
         />
         <img

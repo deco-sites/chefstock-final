@@ -99,7 +99,7 @@ export const grid = {
     },
     desktop: {
       "center": "sm:place-items-center",
-      "start": "sm:place-items-start",
+      "start": "sm:place-items-start mt-5",
       "end": "sm:place-items-end",
       "baseline": "sm:place-items-baseline",
       "stretch": "sm:place-items-stretch",

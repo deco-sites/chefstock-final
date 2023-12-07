@@ -75,7 +75,7 @@ function ProductInfo({ page, layout }: Props) {
     <div class="flex flex-col" id={id}>
       <Breadcrumb itemListElement={breadcrumb.itemListElement} />
       {/* Code and name */}
-      <div class="mt-4 sm:mt-8">
+      <div class="mt-1 sm:mt-1">
         <div>
           {gtin && (
             <span class="text-sm text-base-300">
