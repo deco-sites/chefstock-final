@@ -80,6 +80,8 @@ function ProductShelf({
           </div>
         </>
         <SliderJS rootId={id} />
+
+      
         <SendEventOnView
           id={id}
           event={{

@@ -263,7 +263,13 @@ function ProductCard(
                   l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
                 }`}
               >
-                {formatPrice(listPrice, offers?.priceCurrency)}
+                  {(listPrice ?? 0) > price && (
+                  <span class="line-through text-base-300 text-xs">
+                    {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                )}
+               
+          
               </div>
               <div class="text-accent text-base lg:text-xl">
                 {formatPrice(price, offers?.priceCurrency)}
@@ -273,7 +279,7 @@ function ProductCard(
               ? ""
               : (
                 <div class="text-base-300 text-sm lg:text-base truncate">
-                  ou {installments}
+                  {installments}
                 </div>
               )}
           </div>
